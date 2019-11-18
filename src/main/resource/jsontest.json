@@ -1,0 +1,20 @@
+{
+	"CheckInInfos":[
+	{
+		"checkID":123,
+		"checkname":"rainkmc",
+		"username":"testuser",
+		"password":"password1",
+		"checkinUrl":"checkinurl",
+		"cookie":"1234567890"
+	},
+	{
+		"checkID":456,
+		"checkname":"rainkmc2",
+		"username":"testuser2",
+		"password":"password2",
+		"checkinUrl":"checkinurl2",
+		"cookie":"0123456789"
+	}
+	]
+}

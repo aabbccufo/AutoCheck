@@ -33,7 +33,7 @@ public class CheckUtils {
 		init();
 		for(Cookie i : checkInInfo.getCookies()) {
 			BasicClientCookie clientCookie = new BasicClientCookie( i.getCookiename() , i.getValue() );
-			clientCookie.setPath(checkInInfo.getPath());
+			clientCookie.setPath(checkInInfo.getPath()==null?"/":checkInInfo.getPath());
 			clientCookie.setDomain(checkInInfo.getDomain());
 			cookieStore.addCookie(clientCookie);
 		}

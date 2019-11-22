@@ -1,10 +1,11 @@
+package pri.wfl.src;
 import java.io.File;
 
 import pri.wfl.obj.CheckInInfo;
 import pri.wfl.src.InitParameter;
 import pri.wfl.utils.*;
 
-public class MainTest {
+public class Main {
 
 	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub

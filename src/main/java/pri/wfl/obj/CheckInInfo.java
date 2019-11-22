@@ -1,25 +1,25 @@
 package pri.wfl.obj;
 
+import java.util.ArrayList;
 
 public class CheckInInfo {
-	public int checkID;
 	public String checkname;
-	public String username;
-	public String password;
 	public String checkinUrl;
-	public String cookie;
+	public String domain;
+	public String path;
+	public ArrayList<Cookie> cookies = new ArrayList<Cookie>();
 	
-	public String getUsername() {
-		return username;
+	public String getPath() {
+		return path;
 	}
-	public void setUsername(String username) {
-		this.username = username;
+	public void setPath(String path) {
+		this.path = path;
 	}
-	public String getPassword() {
-		return password;
+	public ArrayList<Cookie> getCookies() {
+		return cookies;
 	}
-	public void setPassword(String password) {
-		this.password = password;
+	public void setCookies(ArrayList<Cookie> cookies) {
+		this.cookies = cookies;
 	}
 	public String getCheckinUrl() {
 		return checkinUrl;
@@ -27,31 +27,26 @@ public class CheckInInfo {
 	public void setCheckinUrl(String checkinUrl) {
 		this.checkinUrl = checkinUrl;
 	}
-	public String getCookie() {
-		return cookie;
-	}
-	public void setCookie(String cookie) {
-		this.cookie = cookie;
-	}
-	public int getCheckID() {
-		return checkID;
-	}
-	public void setCheckID(int checkID) {
-		this.checkID = checkID;
-	}
-
 	public String getCheckname() {
 		return checkname;
 	}
 	public void setCheckname(String checkname) {
 		this.checkname = checkname;
 	}
+	
+	public String getDomain() {
+		return domain;
+	}
+	public void setDomain(String domain) {
+		this.domain = domain;
+	}
 	public void print() {
-		System.out.println("checkID:"+getCheckID());
 		System.out.println("checkname:"+getCheckname());
-		System.out.println("username:"+getUsername());
-		System.out.println("password:"+getPassword());
 		System.out.println("checkinUrl:"+getCheckinUrl());
-		System.out.println("cookie:"+getCookie());
+		System.out.println("domain:"+getDomain());
+		System.out.println("path:"+getPath());
+		System.out.println("cookies:");
+		for(Cookie i : cookies)
+			System.out.println("cookiename:"+i.cookiename+"\tvalue:"+i.value);
 	}
 }

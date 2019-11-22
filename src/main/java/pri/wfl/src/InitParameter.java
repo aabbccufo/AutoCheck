@@ -12,36 +12,39 @@ import pri.wfl.utils.FileUtils;
 public class InitParameter {
 	public ArrayList<CheckInInfo> CheckInInfos;
 	public int init() {
-		int result = load();
+		int result = reload();
 		System.out.println("=====initInfo=====");
 		print();
 		System.out.println("=====End=====");
 		return result;
 	}
-	public int load() {
+	public int reload() {
 		String jsonStr;
 		FileUtils fu = new FileUtils();
 		//jsonStr = "{\"CheckInInfos\":[{\"checkID\":123,\"checkname\":\"rainkmc\",\"username\":\"testuser\",\"password\":\"password1\",\"checkinUrl\":\"checkinurl\",\"cookie\":\"1234567890\"},{\"checkID\":456,\"checkname\":\"rainkmc2\",\"username\":\"testuser2\",\"password\":\"password2\",\"checkinUrl\":\"checkinurl2\",\"cookie\":\"0123456789\"}]}\r\n";
-		jsonStr = fu.readFile("");
-		//ÏÈ×ªJsonObject
+		jsonStr = fu.readFile("checkininfos.json");
+		//ï¿½ï¿½×ªJsonObject
 	    JsonObject jsonObject = new JsonParser().parse(jsonStr).getAsJsonObject();
-	    //ÔÙ×ªJsonArray ¼ÓÉÏÊý¾ÝÍ·
+	    //ï¿½ï¿½×ªJsonArray ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í·
 	    JsonArray jsonArray = jsonObject.getAsJsonArray("CheckInInfos");
 
-	    CheckInInfos = new  ArrayList<CheckInInfo>();
+	    CheckInInfos = new ArrayList<CheckInInfo>();
 		Gson gson = new Gson();
 		
-		//Ñ­»·±éÀú
+		//Ñ­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	    for (JsonElement user : jsonArray) {
-	        //Í¨¹ý·´Éä µÃµ½UserBean.class
+	        //Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ãµï¿½UserBean.class
 	    	CheckInInfo checkInfo = gson.fromJson(user, new TypeToken<CheckInInfo>() {}.getType());
 	    	CheckInInfos.add(checkInfo);
 	    }
 		//gson.
 		return 1;
 	}
+	public ArrayList<CheckInInfo> getCheckInInfos() {
+		return CheckInInfos;
+	}
 	public void print() {
-		CheckInInfos.get(0).print();
-		CheckInInfos.get(1).print();
+		for (CheckInInfo i: CheckInInfos)
+			i.print();
 	}
 }

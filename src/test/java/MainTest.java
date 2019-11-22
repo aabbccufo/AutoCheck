@@ -1,3 +1,6 @@
+import java.io.File;
+
+import pri.wfl.obj.CheckInInfo;
 import pri.wfl.src.InitParameter;
 import pri.wfl.utils.*;
 
@@ -7,11 +10,18 @@ public class MainTest {
 		// TODO Auto-generated method stub
 		String testString;
 		System.out.println("testworld");
-		InitParameter init = new InitParameter();
-		init.init();
+		InitParameter parameter = new InitParameter();
+		parameter.init();
 		
+
 		CheckUtils checkUtils = new CheckUtils();
-		checkUtils.test();
+		
+//		checkUtils.test();
+		
+		for (CheckInInfo i : parameter.getCheckInInfos()) {
+			checkUtils.checkIn(i);
+		}
+		
 	}
 
 }

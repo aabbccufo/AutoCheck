@@ -1,0 +1,23 @@
+{
+	"CheckInInfos":[
+        {
+        "checkname":"rainkmc",
+		"checkinUrl":"https://rainkmc.com/plugin.php?id=u179_qdgj&action=punch",
+		"domain":"rainkmc.com",
+		"path":"/",
+		"cookies":[
+                {"cookiename":"ihFD_2132_auth","value":"385fnr0LpkLS%2BGDigo12ypvoCWKz9EAJW9ADXQTKwLRGd5Fek3uYBeC43tC6Ca245aVuuDY%2Fj3Sj4RgnKl8Osd0HDw"},
+                {"cookiename":"ihFD_2132_saltkey","value":"LIUuqUfj"}
+                ]
+	}
+	,{
+        "checkname":"bilibili_live",
+		"checkinUrl":"https://api.live.bilibili.com/sign/doSign",
+		"domain":"api.live.bilibili.com",
+		"path":"/",
+		"cookies":[
+                {"cookiename":"SESSDATA","value":"e0739577%2C1576912911%2C48ad18b1"}
+                ]
+	}
+	]
+}

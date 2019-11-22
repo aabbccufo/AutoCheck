@@ -15,7 +15,7 @@ public class FileUtils {
 	public String readFile(String filePath) {
 		File file;
 		if ( filePath.isEmpty() || filePath==null )
-			file = new File("D:\\wfl_file\\nasgo\\eclipseProject\\rainkmcAutoCheckI\\src\\main\\resource\\jsontest.json");
+			file = new File("checkininfos.json");
 		else
 			file = new File(filePath);
 		String fileString = "";
@@ -23,7 +23,7 @@ public class FileUtils {
 		InputStreamReader read;
 		try {
 			read = new InputStreamReader( new FileInputStream(file),"UTF-8" );
-			// ¿¼ÂÇµ½±àÂë¸ñÊ½
+			// ï¿½ï¿½ï¿½Çµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê½
 	        BufferedReader bufferedReader = new BufferedReader(read);
 	        String lineTxt = null;
 	
